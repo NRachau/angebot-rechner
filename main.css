@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #1f2937;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+}
+.header h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  margin-top: 30px;
+}
+.options,
+.summary {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.option-block {
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 8px;
+}
+.option-block label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.option-block input {
+  margin-right: 10px;
+}
+.summary h2 {
+  margin-bottom: 20px;
+}
+#summary-output {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.actions {
+  margin-top: 30px;
+}
+#action-dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+#status-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #065f46;
+}
+@media (max-width: 768px) {
+  .calculator {
+    grid-template-columns: 1fr;
+  }
+}
