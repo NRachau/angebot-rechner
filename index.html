@@ -2,41 +2,37 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KI-Workflow Angebotsrechner</title>
   <link rel="stylesheet" href="./main.css" />
-<script src="./rechner.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <h1>KI-Workflow Angebotsrechner</h1>
-      <p>Stellen Sie Ihr individuelles Setup zusammen und erhalten Sie direkt einen Kostenüberblick.</p>
-    </header>
+  <header class="header">
+    <h1>KI-Workflow Angebotsrechner</h1>
+    <p>Stellen Sie Ihr individuelles Setup zusammen und erhalten Sie direkt einen Kostenüberblick.</p>
+  </header>
 
-    <main class="calculator">
-      <section class="options" id="options">
-        <!-- Hier werden dynamisch Workflows, Pakete etc. eingefügt -->
-      </section>
+  <main class="container">
+    <section class="left-box">
+      <h2>Modul-Auswahl</h2>
+      <form id="rechner-form">
+        <label><input type="checkbox" name="module" value="setup"> Basis Setup (499 €)</label><br/>
+        <label><input type="checkbox" name="module" value="leads-50"> 50 Leads Paket (149 €)</label><br/>
+        <label><input type="checkbox" name="module" value="leads-100"> 100 Leads Paket (249 €)</label><br/>
+        <label><input type="checkbox" name="module" value="training"> Schulungspaket (399 €)</label><br/>
+        <label><input type="checkbox" name="module" value="support-monat"> Support monatlich (29 €)</label><br/>
+        <label><input type="checkbox" name="module" value="support-jahr"> Support jährlich (299 €)</label><br/>
+        <label><input type="checkbox" name="module" value="pflege-monat"> Datenpflege monatlich (99 €)</label><br/>
+        <label><input type="checkbox" name="module" value="pflege-jahr"> Datenpflege jährlich (999 €)</label><br/>
+      </form>
+    </section>
 
+    <section class="right-box">
+      <h2>Kostenübersicht</h2>
+      <p id="kostenanzeige">0 €</p>
+    </section>
+  </main>
 
-      <aside class="summary">
-        <h2>Kostenübersicht</h2>
-        <div id="summary-output">
-          <!-- Dynamisch generierte Zusammenfassung -->
-        </div>
-        <div class="actions">
-          <select id="action-dropdown">
-            <option value="">Aktion wählen</option>
-            <option value="print">🖨️ Drucken</option>
-            <option value="pdf">📄 PDF exportieren</option>
-            <option value="copy">📋 In Zwischenablage</option>
-          </select>
-          <p id="status-message"></p>
-        </div>
-      </aside>
-    </main>
-  </div>
+  <script src="./rechner.js"></script>
 </body>
 </html>
