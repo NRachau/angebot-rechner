@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KI-Workflow Angebotsrechner</title>
-  <link rel="stylesheet" href="./main.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angebotsrechner</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="header">
-    <h1>KI-Workflow Angebotsrechner</h1>
-    <p>Stellen Sie Ihr individuelles Setup zusammen und erhalten Sie direkt einen Kostenüberblick.</p>
-  </header>
-
-  <main class="container">
-    <section class="left-box">
-      <h2>Modul-Auswahl</h2>
+  <div class="header">
+    <h1>KI Angebotsrechner</h1>
+    <p>Wähle deine Module und erhalte den Gesamtpreis</p>
+  </div>
+  <div class="container">
+    <div class="left-box">
       <form id="rechner-form">
-        <label><input type="checkbox" name="module" value="setup"> Basis Setup (499 €)</label><br/>
-        <label><input type="checkbox" name="module" value="leads-50"> 50 Leads Paket (149 €)</label><br/>
-        <label><input type="checkbox" name="module" value="leads-100"> 100 Leads Paket (249 €)</label><br/>
-        <label><input type="checkbox" name="module" value="training"> Schulungspaket (399 €)</label><br/>
-        <label><input type="checkbox" name="module" value="support-monat"> Support monatlich (29 €)</label><br/>
-        <label><input type="checkbox" name="module" value="support-jahr"> Support jährlich (299 €)</label><br/>
-        <label><input type="checkbox" name="module" value="pflege-monat"> Datenpflege monatlich (99 €)</label><br/>
-        <label><input type="checkbox" name="module" value="pflege-jahr"> Datenpflege jährlich (999 €)</label><br/>
-      </form>
-    </section>
 
-    <section class="right-box">
-      <h2>Kostenübersicht</h2>
-      <p id="kostenanzeige">0 €</p>
-    </section>
-  </main>
+        <fieldset>
+          <legend>Basis</legend>
+          <label><input type="checkbox" value="setup" checked disabled> KI Workflow Setup (499 €) – Pflicht</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Grund-Workflows</legend>
+          <label><input type="checkbox" value="profiling"> KI-Profiling & Segmentierung (299 €)</label>
+          <label><input type="checkbox" value="mailing"> KI-Mailing-Automat (499 €)</label>
+          <label><input type="checkbox" value="responder"> Response-KI & Auto-Responder (799 €)</label>
+          <label><input type="checkbox" value="followup"> Follow-up Sequenz Workflow (399 €)</label>
+          <label><input type="checkbox" value="dashboard"> KI-Bericht & Dashboard Workflow (199 €)</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Zusatzpakete</legend>
+          <label><input type="checkbox" value="verkauf"> Elite Verkaufsstrategie (999 €)</label>
+          <label><input type="checkbox" value="anpassung"> Zielgruppenanpassung (199 €)</label>
+          <label><input type="checkbox" value="training"> Schulungspaket (399 €)</label>
+          <label><input type="checkbox" value="support-m"> Support-Abo monatlich (29 €)</label>
+          <label><input type="checkbox" value="support-j"> Support-Abo jährlich (299 €)</label>
+          <label><input type="checkbox" value="pflege-m"> Datenpflege monatlich (99 €)</label>
+          <label><input type="checkbox" value="pflege-j"> Datenpflege jährlich (999 €)</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Lead-Pakete (monatlich)</legend>
+          <label><input type="checkbox" value="leads-50"> bis 50 Leads (149 €)</label>
+          <label><input type="checkbox" value="leads-100"> bis 100 Leads (249 €)</label>
+          <label><input type="checkbox" value="leads-250"> bis 250 Leads (449 €)</label>
+          <label><input type="checkbox" value="leads-500"> bis 500 Leads (749 €)</label>
+          <label><input type="checkbox" value="leads-1000"> bis 1.000 Leads (1.199 €)</label>
+          <label><input type="checkbox" value="leads-1500"> über 1.000 Leads (ab 1.500 €)</label>
+        </fieldset>
+
+      </form>
+    </div>
+
+    <div class="right-box">
+      <h2>Gesamtkosten</h2>
+      <p id="kostenanzeige">499 €</p>
+    </div>
+  </div>
 
   <script src="./rechner.js"></script>
 </body>
