@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Angebotsrechner</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./main.css" />
+  <script defer src="./rechner.js"></script>
 </head>
 <body>
-  <div class="header">
-    <h1>KI Angebotsrechner</h1>
-    <p>Wähle deine Module und erhalte den Gesamtpreis</p>
-  </div>
   <div class="container">
-    <div class="left-box">
-      <form id="rechner-form">
+    <header>
+      <h1>Angebotsrechner</h1>
+      <p>Wähle deine Module und erhalte dein individuelles Angebot</p>
+    </header>
 
-        <fieldset>
-          <legend>Basis</legend>
-          <label><input type="checkbox" value="setup" checked disabled> KI Workflow Setup (499 €) – Pflicht</label>
-        </fieldset>
+    <!-- Grund-Workflows -->
+    <section id="workflows">
+      <h2>1. Grund-Workflows (frei kombinierbar)</h2>
+      <div class="module-grid" id="workflow-list">
+        <!-- Platzhalter für Workflows, wird dynamisch per JS ergänzt -->
+      </div>
+    </section>
 
-        <fieldset>
-          <legend>Grund-Workflows</legend>
-          <label><input type="checkbox" value="profiling"> KI-Profiling & Segmentierung (299 €)</label>
-          <label><input type="checkbox" value="mailing"> KI-Mailing-Automat (499 €)</label>
-          <label><input type="checkbox" value="responder"> Response-KI & Auto-Responder (799 €)</label>
-          <label><input type="checkbox" value="followup"> Follow-up Sequenz Workflow (399 €)</label>
-          <label><input type="checkbox" value="dashboard"> KI-Bericht & Dashboard Workflow (199 €)</label>
-        </fieldset>
+    <!-- Zusatzpakete -->
+    <section id="zusatzpakete">
+      <h2>2. Zusatzpakete (mind. 1 Workflow erforderlich)</h2>
+      <div class="module-grid" id="zusatzpaket-list">
+        <!-- Platzhalter für Zusatzpakete -->
+      </div>
+    </section>
 
-        <fieldset>
-          <legend>Zusatzpakete</legend>
-          <label><input type="checkbox" value="verkauf"> Elite Verkaufsstrategie (999 €)</label>
-          <label><input type="checkbox" value="anpassung"> Zielgruppenanpassung (199 €)</label>
-          <label><input type="checkbox" value="training"> Schulungspaket (399 €)</label>
-          <label><input type="checkbox" value="support-m"> Support-Abo monatlich (29 €)</label>
-          <label><input type="checkbox" value="support-j"> Support-Abo jährlich (299 €)</label>
-          <label><input type="checkbox" value="pflege-m"> Datenpflege monatlich (99 €)</label>
-          <label><input type="checkbox" value="pflege-j"> Datenpflege jährlich (999 €)</label>
-        </fieldset>
+    <!-- Lead-Datenpakete -->
+    <section id="leaddaten">
+      <h2>3. Lead-Datenpaket wählen</h2>
+      <label for="lead-dropdown">Anzahl Leads:</label>
+      <select id="lead-dropdown">
+        <option value="0">Kein Paket</option>
+        <option value="50">50 Leads – 99 €</option>
+        <option value="100">100 Leads – 149 €</option>
+        <option value="250">250 Leads – 299 €</option>
+        <option value="500">500 Leads – 499 €</option>
+        <option value="1000">1.000 Leads – 899 €</option>
+        <option value="1001">>1.000 Leads – auf Anfrage</option>
+      </select>
+    </section>
 
-        <fieldset>
-          <legend>Lead-Pakete (monatlich)</legend>
-          <label><input type="checkbox" value="leads-50"> bis 50 Leads (149 €)</label>
-          <label><input type="checkbox" value="leads-100"> bis 100 Leads (249 €)</label>
-          <label><input type="checkbox" value="leads-250"> bis 250 Leads (449 €)</label>
-          <label><input type="checkbox" value="leads-500"> bis 500 Leads (749 €)</label>
-          <label><input type="checkbox" value="leads-1000"> bis 1.000 Leads (1.199 €)</label>
-          <label><input type="checkbox" value="leads-1500"> über 1.000 Leads (ab 1.500 €)</label>
-        </fieldset>
+    <!-- Technische Zusatzkosten -->
+    <section id="zusatzkosten">
+      <h2>4. Technische Zusatzkosten</h2>
+      <div id="toolkosten-table">
+        <!-- Wird per JS als Tabelle ergänzt -->
+      </div>
+    </section>
 
-      </form>
-    </div>
+    <!-- Bundles -->
+    <section id="bundles">
+      <h2>5. Bundle-Angebote</h2>
+      <div class="bundle-list" id="bundle-list">
+        <!-- Platzhalter für Bundles, dynamisch -->
+      </div>
+    </section>
 
-    <div class="right-box">
-      <h2>Gesamtkosten</h2>
-      <p id="kostenanzeige">499 €</p>
-    </div>
+    <!-- Infoboxen pro Modul -->
+    <section id="infoboxen">
+      <h2>6. Detailinformationen zu allen Modulen</h2>
+      <div id="infobox-container">
+        <!-- Wird dynamisch aus den Modulen erzeugt -->
+      </div>
+    </section>
+
+    <!-- Ausgabeoptionen -->
+    <section id="ausgabe">
+      <h2>7. Angebot exportieren</h2>
+      <button id="pdf-btn">PDF herunterladen</button>
+      <button id="druck-btn">Drucken</button>
+      <button id="email-btn">Als Anfrage per E-Mail senden</button>
+    </section>
+
+    <!-- Zusammenfassung -->
+    <section id="ergebnis">
+      <h2>8. Deine Zusammenfassung</h2>
+      <div id="summary-output">
+        <!-- Hier wird die Auswahl & Preis zusammengefasst -->
+      </div>
+    </section>
+
   </div>
-
-  <script src="./rechner.js"></script>
 </body>
 </html>
